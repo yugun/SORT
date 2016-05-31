@@ -7,5 +7,6 @@ bool isNonDecreasing(int* array, int length);
 void bubble_sort(int* array, int length);
 void selection_sort(int* array, int length);
 void insertion_sort(int* array, int length);
+void quick_sort(int* array, int start, int end);
 
 #endif

@@ -51,3 +51,29 @@ void insertion_sort(int* array, int length){
 		}
 	}
 }
+/* Quick sort
+
+*/
+int partition(int* array, int start, int end){
+	int pivot = start;
+	int lastSmall = start+1;
+	for(int i = lastSmall; i < end; i ++){
+		if(array[pivot] > array[i])
+			swap(array[lastSmall++], array[i]);
+	}
+	swap(array[pivot], array[lastSmall]);
+	return lastSmall;
+}
+void quick_sort(int* array, int start, int end){
+	if(start < end){	
+		int pivot = partition(array, start, end);
+		quick_sort(array, start, pivot);
+		quick_sort(array, pivot+1, end);
+	}
+}
+/* Merge sort
+
+*/
+/* Heap sort
+
+*/

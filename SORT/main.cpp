@@ -1,9 +1,12 @@
 #include <iostream>
 #include <cstdlib>
 #include <cstring>
+
 #include "sort.h"
+#include "visualize.h"
 
 #define ARRSIZE		100
+
 typedef int keyType;
 using namespace std;
 
@@ -26,10 +29,13 @@ int main(int argc, char** argv){
 		cout << array[i] << " ";
 	}
 	cout << endl;
+	
+//	visualizeArray(array, ARRSIZE);
 
 //	bubble_sort(array, ARRSIZE);
 //	selection_sort(array, ARRSIZE);
-	insertion_sort(array, ARRSIZE);
+//	insertion_sort(array, ARRSIZE);
+	quick_sort(array, 0, ARRSIZE);
 	
 
 	for(int i = 0; i < ARRSIZE; i ++){
