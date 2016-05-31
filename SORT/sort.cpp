@@ -67,7 +67,7 @@ int partition(int* array, int start, int end){
 void quick_sort(int* array, int start, int end){
 	if(start < end){	
 		int pivot = partition(array, start, end);
-		quick_sort(array, start, pivot);
+		quick_sort(array, start, pivot-1);
 		quick_sort(array, pivot+1, end);
 	}
 }

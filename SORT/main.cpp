@@ -5,7 +5,7 @@
 #include "sort.h"
 #include "visualize.h"
 
-#define ARRSIZE		100
+#define ARRSIZE		30	
 
 typedef int keyType;
 using namespace std;
@@ -25,23 +25,31 @@ int main(int argc, char** argv){
 		array[i] = randNumber;
 	}
 
+/*
+	// print non-ordered array
 	for(int i = 0; i < ARRSIZE; i ++){
 		cout << array[i] << " ";
 	}
 	cout << endl;
+*/
 	
-//	visualizeArray(array, ARRSIZE);
+	visualizeArray(array, ARRSIZE);
 
+//	select sort algorithm
 //	bubble_sort(array, ARRSIZE);
 //	selection_sort(array, ARRSIZE);
 //	insertion_sort(array, ARRSIZE);
 	quick_sort(array, 0, ARRSIZE);
+
+	//visualizeArray(array, ARRSIZE);
 	
 
+	// print ordered array
 	for(int i = 0; i < ARRSIZE; i ++){
 		cout << array[i] << " ";
 	}
-	cout << endl << (isNonDecreasing(array, ARRSIZE)? "true":"false") << endl;
+	cout << endl << "is array non-decreasing? : " 
+	<< (isNonDecreasing(array, ARRSIZE)? "true":"false") << endl;
 
 	return 0;
 }
