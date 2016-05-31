@@ -61,14 +61,14 @@ int partition(int* array, int start, int end){
 		if(array[pivot] > array[i])
 			swap(array[lastSmall++], array[i]);
 	}
-	swap(array[pivot], array[lastSmall]);
-	return lastSmall;
+	swap(array[pivot], array[lastSmall-1]);
+	return lastSmall-1;
 }
 void quick_sort(int* array, int start, int end){
 	if(start < end){	
-		int pivot = partition(array, start, end);
-		quick_sort(array, start, pivot-1);
-		quick_sort(array, pivot+1, end);
+		int lastSmall = partition(array, start, end);
+		quick_sort(array, start, lastSmall);
+		quick_sort(array, lastSmall+1, end);
 	}
 }
 /* Merge sort

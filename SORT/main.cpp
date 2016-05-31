@@ -41,14 +41,16 @@ int main(int argc, char** argv){
 //	insertion_sort(array, ARRSIZE);
 	quick_sort(array, 0, ARRSIZE);
 
-	//visualizeArray(array, ARRSIZE);
+	visualizeArray(array, ARRSIZE);
 	
 
+/*
 	// print ordered array
 	for(int i = 0; i < ARRSIZE; i ++){
 		cout << array[i] << " ";
 	}
-	cout << endl << "is array non-decreasing? : " 
+*/
+	cout << endl << "Is array non-decreasing? : " 
 	<< (isNonDecreasing(array, ARRSIZE)? "true":"false") << endl;
 
 	return 0;

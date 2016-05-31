@@ -25,6 +25,7 @@ includes
 1. bubble sort
 2. selection sort
 3. insertion sort
+4. quick sort
 
 * codeground
 : Source files of algorithm problem in Samsung codeground
