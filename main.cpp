@@ -10,10 +10,35 @@
 typedef int keyType;
 using namespace std;
 
+void array_randInit(int* array, int length);
+void array_print(int* array, int length);
 int main(int argc, char** argv){
-	// init
-	srand(time(NULL));
 	int array[ARRSIZE];
+	array_randInit(array, ARRSIZE);
+
+	// print non-ordered array
+//	array_print(array, ARRSIZE);
+	visualizeArray(array, ARRSIZE);
+
+//	select sort algorithm
+//	bubble_sort(array, ARRSIZE);
+//	selection_sort(array, ARRSIZE);
+//	insertion_sort(array, ARRSIZE);
+//	quick_sort(array, 0, ARRSIZE);
+	merge_sort(array, 0, ARRSIZE);
+
+	// print ordered array
+//	array_print(array, ARRSIZE);
+	visualizeArray(array, ARRSIZE);
+	
+	cout << "Is array non-decreasing? : " 
+	<< (isNonDecreasing(array, ARRSIZE)? "true":"false") << endl;
+
+	return 0;
+}
+
+void array_randInit(int* array, int length){
+	srand(time(NULL));
 	bool checked[ARRSIZE];
 	memset(checked, 0, sizeof(checked));
 	
@@ -24,35 +49,9 @@ int main(int argc, char** argv){
 		checked[randNumber-1] = true;
 		array[i] = randNumber;
 	}
-
-/*
-	// print non-ordered array
-	for(int i = 0; i < ARRSIZE; i ++){
+}
+void array_print(int* array, int length){
+	for(int i = 0; i < ARRSIZE; i ++)
 		cout << array[i] << " ";
-	}
 	cout << endl;
-*/
-	
-	visualizeArray(array, ARRSIZE);
-
-//	select sort algorithm
-//	bubble_sort(array, ARRSIZE);
-//	selection_sort(array, ARRSIZE);
-//	insertion_sort(array, ARRSIZE);
-//	quick_sort(array, 0, ARRSIZE);
-	merge_sort(array, 0, ARRSIZE);
-
-	visualizeArray(array, ARRSIZE);
-	
-
-/*
-	// print ordered array
-	for(int i = 0; i < ARRSIZE; i ++){
-		cout << array[i] << " ";
-	}
-*/
-	cout << endl << "Is array non-decreasing? : " 
-	<< (isNonDecreasing(array, ARRSIZE)? "true":"false") << endl;
-
-	return 0;
 }
