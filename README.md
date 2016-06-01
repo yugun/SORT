@@ -7,16 +7,6 @@ It is made to improve my algorithm skill
 
 ## Contents
 -----------
-* ACM-ICPC
-: Source files of algorithm problem in ACM-ICPC
-
-[ACM-ICPC Algorithm problem](https://icpcarchive.ecs.baylor.edu/index.php?option=com_onlinejudge&Itemid=8)
-
-* Algorithm`_`book
-: Source files of algorithm problem in books "the strategy of algorithm problem solving"
-
-[Algospot](https://www.algospot.com)
-
 * SORT
 : Implement variable sorting algorithm myself to study
 
@@ -28,7 +18,3 @@ includes
 4. quick sort
 5. merge sort
 
-* codeground
-: Source files of algorithm problem in Samsung codeground
-
-[Samsung codeground](https://www.codeground.org/main.do)
