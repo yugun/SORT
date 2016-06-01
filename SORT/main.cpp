@@ -39,7 +39,8 @@ int main(int argc, char** argv){
 //	bubble_sort(array, ARRSIZE);
 //	selection_sort(array, ARRSIZE);
 //	insertion_sort(array, ARRSIZE);
-	quick_sort(array, 0, ARRSIZE);
+//	quick_sort(array, 0, ARRSIZE);
+	merge_sort(array, 0, ARRSIZE);
 
 	visualizeArray(array, ARRSIZE);
 	

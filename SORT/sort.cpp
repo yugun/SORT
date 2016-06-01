@@ -54,6 +54,13 @@ void insertion_sort(int* array, int length){
 /* Quick sort
 
 */
+void quick_sort(int* array, int start, int end){
+	if(start < end){	
+		int lastSmall = partition(array, start, end);
+		quick_sort(array, start, lastSmall);
+		quick_sort(array, lastSmall+1, end);
+	}
+}
 int partition(int* array, int start, int end){
 	int pivot = start;
 	int lastSmall = start+1;
@@ -64,16 +71,48 @@ int partition(int* array, int start, int end){
 	swap(array[pivot], array[lastSmall-1]);
 	return lastSmall-1;
 }
-void quick_sort(int* array, int start, int end){
-	if(start < end){	
-		int lastSmall = partition(array, start, end);
-		quick_sort(array, start, lastSmall);
-		quick_sort(array, lastSmall+1, end);
-	}
-}
 /* Merge sort
 
 */
+void merge(int* array, int start, int mid, int end){
+	int *arrayFront, *arrayBack;
+	int index, indexF, indexB, n, nFront, nBack;
+	index = indexF = indexB = 0;
+	n = end - start;
+	nFront = mid - start;
+	nBack = end - mid;
+
+	int* arrayTemp = new int[n];
+	arrayFront = array + start;
+	arrayBack = array + mid;
+	
+	while(indexF < nFront && indexB < nBack){
+		if(arrayFront[indexF] < arrayBack[indexB])
+			arrayTemp[index++] = arrayFront[indexF++];
+		else
+			arrayTemp[index++] = arrayBack[indexB++];
+	}
+	if(indexF < nFront)
+		for(int i = index; i < n; i ++)
+			arrayTemp[i] = arrayFront[indexF++];
+	else
+		for(int i = index; i < n; i ++)
+			arrayTemp[i] = arrayBack[indexB++];
+
+	for(int i = 0; i < n; i ++)
+		array[start + i] = arrayTemp[i];
+
+	delete [] arrayTemp;
+}
+void merge_sort(int* array, int start, int end){
+	if(end - start > 1){
+		int mid = (start + end)/2;
+		merge_sort(array, start, mid);
+		merge_sort(array, mid, end);
+
+		merge(array, start, mid, end);
+	}
+}
 /* Heap sort
 
 */
